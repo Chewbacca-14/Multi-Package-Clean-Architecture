@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class City {
   final String name;
   final double latitude;

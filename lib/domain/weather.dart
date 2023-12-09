@@ -2,8 +2,8 @@
 import 'dart:convert';
 
 class Weather {
-  final double temp;
-  final double feelsLike;
+  final int temp;
+  final int feelsLike;
 
   Weather({required this.temp, required this.feelsLike});
 
@@ -16,12 +16,13 @@ class Weather {
 
   factory Weather.fromMap(Map<String, dynamic> map) {
     return Weather(
-      temp: map['temp'] as double,
-      feelsLike: map['feels_like'] as double,
+      temp: map['temp'] as int,
+      feelsLike: map['feels_like'] as int,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Weather.fromJson(String source) => Weather.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Weather.fromJson(String source) =>
+      Weather.fromMap(json.decode(source) as Map<String, dynamic>);
 }
